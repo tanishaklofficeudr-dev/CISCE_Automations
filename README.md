@@ -1,83 +1,319 @@
-Project Setup & Execution Steps
+# 🏫 CISCE Preliminary Form Automation Framework
 
-1. Open project folder in VS Code
+A Playwright + Python automation framework developed for the **CISCE E-Affiliation – Preliminary Form**. The framework automates end-to-end business workflows along with Regression, Sanity, and Authentication test suites using the Page Object Model (POM) and Data-Driven Testing approach.
 
-2. Create virtual environment:
-   python -m venv venv
+---
 
-3. Activate virtual environment:
-   venv\Scripts\activate
+# 📌 Project Overview
 
-4. Install dependencies:
-   pip install -r requirements.txt
+This automation framework covers the complete Preliminary Form workflow, including:
 
-5. Install Playwright browsers:
-   playwright install
+- Registration
+- Login
+- School Details
+- Address Details
+- NOC Details
+- Trust Details
+- Certificate of Land
+- Upload Documents
+- Payment Gateway
+- End-to-End Preliminary Form Submission
 
---------------------------------------------------
-Run Automation Test
---------------------------------------------------
+The framework is designed to support:
 
-Basic Execution:
+- ✅ End-to-End Automation
+- ✅ Regression Testing
+- ✅ Sanity Testing
+- ✅ Data-Driven Testing
+- ✅ Allure Reporting
+- ✅ HTML Reporting
+- ✅ Screenshot & Video Capture
+- ✅ CI/CD Ready Architecture
+
+---
+
+# 📊 Automation Coverage
+
+| Test Suite | Count |
+|------------|------:|
+| Regression Tests | 155 |
+| Sanity Tests | 25 |
+| End-to-End Tests | 1 |
+| **Total Automated Tests** | **156** |
+
+> *(Update these counts whenever new test cases are added.)*
+
+---
+
+# 🛠 Tech Stack
+
+- Python 3.x
+- Playwright
+- Pytest
+- Allure Report
+- HTML Report
+- OpenPyXL
+- Page Object Model (POM)
+- Data Driven Framework
+
+---
+
+# 📁 Project Structure
+
+```text
+.
+├── pages/                  # Page Object Model classes
+├── tests/
+│   ├── regression/
+│   ├── sanity/
+│   └── test_preliminary_form_main.py
+├── utils/                  # Utility classes
+├── test_data/              # Excel data & upload documents
+├── reports/                # HTML Reports
+├── allure-results/         # Allure execution results
+├── allure-report/          # Generated Allure report
+├── screenshots/            # Failure screenshots
+├── videos/                 # Playwright videos
+├── traces/                 # Playwright traces
+├── requirements.txt
+├── pytest.ini
+└── README.md
+```
+
+---
+
+# ⚙️ Project Setup
+
+## 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd Preliminary_Form_School_End
+```
+
+---
+
+## 2. Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+---
+
+## 3. Activate Virtual Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 5. Install Playwright Browsers
+
+```bash
+playwright install
+```
+
+---
+
+# ▶️ Test Execution
+
+## Run Complete Regression Suite
+
+```bash
+python -m pytest tests/regression/ -v --headed
+```
+
+---
+
+## Run Sanity Suite
+
+```bash
+python -m pytest tests/regression/ -m sanity -v --headed
+```
+
+---
+
+## Run End-to-End Test
+
+```bash
 python -m pytest tests/test_preliminary_form_main.py -v --headed
+```
 
-Execution with Slow Motion:
+---
+
+## Run with Slow Motion
+
+```bash
 python -m pytest tests/test_preliminary_form_main.py -v --headed --slowmo=1000
+```
 
---------------------------------------------------
-Generate HTML Report
---------------------------------------------------
+---
 
-python -m pytest tests/test_preliminary_form_main.py --html=reports/report.html --self-contained-html
+# 📄 Generate HTML Report
 
-Report Location:
+```bash
+python -m pytest --html=reports/report.html --self-contained-html
+```
+
+Report Location
+
+```
 reports/report.html
+```
 
---------------------------------------------------
-Capture Screenshots on Failure
---------------------------------------------------
+---
 
+# 📊 Generate Allure Report
+
+## Execute Tests
+
+```bash
+python -m pytest --alluredir=allure-results
+```
+
+Generate Report
+
+```bash
+allure generate allure-results --clean -o allure-report
+```
+
+Open Report
+
+```bash
+allure open allure-report
+```
+
+---
+
+# 📸 Screenshots
+
+Capture screenshots on failures
+
+```bash
 pytest --screenshot=only-on-failure
+```
 
-Screenshot Location:
+Location
+
+```
 screenshots/
+```
 
---------------------------------------------------
-Capture Video Recording
---------------------------------------------------
+---
 
+# 🎥 Video Recording
+
+```bash
 pytest --video=on
+```
 
-Video Location:
+Location
+
+```
 videos/
+```
 
---------------------------------------------------
-Capture Playwright Traces
---------------------------------------------------
+---
 
+# 🔍 Playwright Trace
+
+```bash
 pytest --tracing=on
+```
 
-Trace Location:
+Location
+
+```
 traces/
+```
 
-To Open Trace Viewer:
+Open Trace Viewer
+
+```bash
 playwright show-trace traces/<trace-file>.zip
+```
 
---------------------------------------------------
-Run Complete Framework
---------------------------------------------------
+---
 
-python -m pytest -v --headed
+# 📈 Reports
 
---------------------------------------------------
-Folder Structure
---------------------------------------------------
+The framework supports:
 
-pages/        -> Page Object Model files
-tests/        -> Test cases
-utils/        -> Utility files
-test_data/    -> Test data & documents
-reports/      -> HTML reports
-screenshots/  -> Failure screenshots
-videos/       -> Execution videos
-traces/       -> Playwright traces
+- HTML Reports
+- Allure Reports
+- Screenshots
+- Video Recording
+- Playwright Trace
+- Pytest Logs
+
+---
+
+# 🧪 Framework Features
+
+- Page Object Model (POM)
+- Data-Driven Testing
+- Excel-based Test Data
+- Reusable Fixtures
+- Custom Utilities
+- Retry Mechanism
+- Validation Helpers
+- Screenshot Utility
+- HTML Reporting
+- Allure Reporting
+- Playwright Trace Support
+
+---
+
+# 🚀 Execution Order
+
+Recommended execution sequence:
+
+1. Authentication Tests
+2. Regression Tests
+3. Sanity Tests
+4. End-to-End Test
+5. Payment Gateway Tests (Execute Last)
+
+---
+
+# 📌 Notes
+
+- Activate the virtual environment before running tests.
+- Install Playwright browsers before the first execution.
+- Payment Gateway tests should be executed after all other regression tests.
+- Update the Excel test data before execution if required.
+- Review Allure and HTML reports after each execution.
+
+---
+
+# 👩‍💻 Developed By
+
+**Tanisha Maratha**
+
+QA Automation Engineer
+
+Playwright • Python • Pytest
+
+---
+
+# 📄 License
+
+This repository is intended for internal project use.
