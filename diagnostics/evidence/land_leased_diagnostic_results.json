@@ -1,0 +1,595 @@
+{
+  "leased_fields": [
+    {
+      "id": "lease_area_unit_0",
+      "label": "Lease Area Unit",
+      "found": true,
+      "visible": true,
+      "type": "SELECT/select-one",
+      "readonly": null,
+      "disabled": false,
+      "value": "1",
+      "placeholder": null,
+      "className": "custom-select form-select"
+    },
+    {
+      "id": "lease_land_area_0",
+      "label": "Lease Land Area",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "placeholder": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "id": "leease_name_0",
+      "label": "Name of Lessee",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "placeholder": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "id": "leaser_name_0",
+      "label": "Name of Lessor",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "placeholder": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "id": "lease_deed_date_0",
+      "label": "Date of Lease Deed",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "placeholder": "Select a date",
+      "className": "form-control form-control-sm bd-clr datepicker date-picker"
+    },
+    {
+      "id": "lease_deed_duration_0",
+      "label": "Duration of Lease Deed",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "placeholder": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "id": "date_regis_lease_deed0",
+      "label": "Date of Registration",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "placeholder": "Select a date",
+      "className": "form-control form-control-sm bd-clr datepicker date-picker"
+    },
+    {
+      "id": "regid_ofc_details0",
+      "label": "Registration Office",
+      "found": true,
+      "visible": true,
+      "type": "INPUT/text",
+      "readonly": false,
+      "disabled": false,
+      "value": "Sub-Registrar Office",
+      "placeholder": "",
+      "className": "form-control form-control-sm bd-clr"
+    }
+  ],
+  "renewal_radios": [
+    {
+      "id": "singlePlot1",
+      "name": "plotType",
+      "value": "1",
+      "checked": true,
+      "visible": true,
+      "labels": [
+        "Single"
+      ],
+      "parentText": "Single\n                                \n\n         "
+    },
+    {
+      "id": "multiplePlot1",
+      "name": "plotType",
+      "value": "2",
+      "checked": false,
+      "visible": true,
+      "labels": [
+        "Multiple"
+      ],
+      "parentText": "Single\n                                \n\n         "
+    },
+    {
+      "id": "renewal_yes",
+      "name": "plotTypeyes",
+      "value": "1",
+      "checked": false,
+      "visible": false,
+      "labels": [
+        "Yes"
+      ],
+      "parentText": "Yes\n                                \n\n            "
+    },
+    {
+      "id": "renewal_no",
+      "name": "plotTypeyes",
+      "value": "2",
+      "checked": false,
+      "visible": false,
+      "labels": [
+        "No"
+      ],
+      "parentText": "Yes\n                                \n\n            "
+    },
+    {
+      "id": "renewal_yes0",
+      "name": "renewal_clause[0]",
+      "value": "1",
+      "checked": false,
+      "visible": true,
+      "labels": [],
+      "parentText": "Is there any Renewal clause in the\n               "
+    },
+    {
+      "id": "Renewal_no0",
+      "name": "renewal_clause[0]",
+      "value": "2",
+      "checked": true,
+      "visible": true,
+      "labels": [],
+      "parentText": "Is there any Renewal clause in the\n               "
+    }
+  ],
+  "yes_radio_count": 0,
+  "no_radio_count": 0,
+  "all_visible_inputs_leased": [
+    {
+      "index": 45,
+      "tag": "INPUT",
+      "id": "col_school_name",
+      "name": "",
+      "type": "text",
+      "placeholder": " ",
+      "readonly": true,
+      "disabled": false,
+      "value": "Country State Diag School",
+      "className": "form-control"
+    },
+    {
+      "index": 46,
+      "tag": "INPUT",
+      "id": "col_school_address",
+      "name": "",
+      "type": "text",
+      "placeholder": " ",
+      "readonly": true,
+      "disabled": false,
+      "value": "123 Diag Street,  ,,Ajmer,Rajasthan",
+      "className": "form-control"
+    },
+    {
+      "index": 48,
+      "tag": "INPUT",
+      "id": "singlePlot1",
+      "name": "plotType",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "1",
+      "className": ""
+    },
+    {
+      "index": 49,
+      "tag": "INPUT",
+      "id": "multiplePlot1",
+      "name": "plotType",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "2",
+      "className": "ms-2"
+    },
+    {
+      "index": 58,
+      "tag": "INPUT",
+      "id": "owned_plot_id0",
+      "name": "owner_details[0]",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "1",
+      "className": "ms-2"
+    },
+    {
+      "index": 59,
+      "tag": "INPUT",
+      "id": "rented_id0",
+      "name": "owner_details[0]",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "2",
+      "className": "ms-2"
+    },
+    {
+      "index": 60,
+      "tag": "SELECT",
+      "id": "land_unit_0",
+      "name": "area_unit[]",
+      "type": "select-one",
+      "placeholder": "",
+      "readonly": null,
+      "disabled": false,
+      "value": "3",
+      "className": "custom-select form-select"
+    },
+    {
+      "index": 61,
+      "tag": "INPUT",
+      "id": "land_area_0",
+      "name": "land_area[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "5000",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 62,
+      "tag": "SELECT",
+      "id": "situated_in_0",
+      "name": "situated_in[]",
+      "type": "select-one",
+      "placeholder": "",
+      "readonly": null,
+      "disabled": false,
+      "value": "1",
+      "className": "custom-select form-select"
+    },
+    {
+      "index": 63,
+      "tag": "INPUT",
+      "id": "situate_speci_0",
+      "name": "situate_speci[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "Survey No(s)",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 64,
+      "tag": "INPUT",
+      "id": "situated_at0",
+      "name": "situated_at[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "Civil Lines, Jaipur",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 65,
+      "tag": "INPUT",
+      "id": "owned_by_0",
+      "name": "owned_by[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "Test Trust",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 66,
+      "tag": "SELECT",
+      "id": "land_title_doc0",
+      "name": "details_land_title[]",
+      "type": "select-one",
+      "placeholder": "",
+      "readonly": null,
+      "disabled": false,
+      "value": "3",
+      "className": "form-select form-select-sm bd-clr"
+    },
+    {
+      "index": 67,
+      "tag": "SELECT",
+      "id": "sale_deed_favor_whom_0",
+      "name": "sale_deed_favor_whom[]",
+      "type": "select-one",
+      "placeholder": "",
+      "readonly": null,
+      "disabled": false,
+      "value": "2",
+      "className": "form-select form-select-sm bd-clr"
+    },
+    {
+      "index": 69,
+      "tag": "INPUT",
+      "id": "land_title0",
+      "name": "land_title[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "REG-BASELINE-001",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 70,
+      "tag": "INPUT",
+      "id": "executed_by0",
+      "name": "executed_by[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "Mr. Baseline",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 71,
+      "tag": "INPUT",
+      "id": "regid_ofc_details0",
+      "name": "registered_ofc_details[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "Sub-Registrar Office",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 72,
+      "tag": "INPUT",
+      "id": "land_title_date0",
+      "name": "land_title_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr datepicker date-picker"
+    },
+    {
+      "index": 73,
+      "tag": "SELECT",
+      "id": "lease_area_unit_0",
+      "name": "lease_area_unit[]",
+      "type": "select-one",
+      "placeholder": "",
+      "readonly": null,
+      "disabled": false,
+      "value": "1",
+      "className": "custom-select form-select"
+    },
+    {
+      "index": 74,
+      "tag": "INPUT",
+      "id": "lease_land_area_0",
+      "name": "lease_land_area[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 75,
+      "tag": "INPUT",
+      "id": "leease_name_0",
+      "name": "leease_name[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 76,
+      "tag": "INPUT",
+      "id": "leaser_name_0",
+      "name": "leaser_name[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 77,
+      "tag": "INPUT",
+      "id": "lease_deed_date_0",
+      "name": "lease_deed_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr datepicker date-picker"
+    },
+    {
+      "index": 78,
+      "tag": "INPUT",
+      "id": "lease_deed_duration_0",
+      "name": "lease_deed_duration[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 79,
+      "tag": "INPUT",
+      "id": "date_regis_lease_deed0",
+      "name": "registartion_lease_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr datepicker date-picker"
+    },
+    {
+      "index": 80,
+      "tag": "INPUT",
+      "id": "details_regis_ofc0",
+      "name": "registration_office_details[]",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "form-control form-control-sm bd-clr"
+    },
+    {
+      "index": 81,
+      "tag": "INPUT",
+      "id": "renewal_yes0",
+      "name": "renewal_clause[0]",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "1",
+      "className": "ms-0"
+    },
+    {
+      "index": 82,
+      "tag": "INPUT",
+      "id": "Renewal_no0",
+      "name": "renewal_clause[0]",
+      "type": "radio",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "2",
+      "className": "ms-2"
+    },
+    {
+      "index": 107,
+      "tag": "INPUT",
+      "id": "",
+      "name": "",
+      "type": "file",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "dz-hidden-input"
+    },
+    {
+      "index": 108,
+      "tag": "INPUT",
+      "id": "",
+      "name": "",
+      "type": "file",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "dz-hidden-input"
+    },
+    {
+      "index": 109,
+      "tag": "INPUT",
+      "id": "",
+      "name": "",
+      "type": "file",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "dz-hidden-input"
+    },
+    {
+      "index": 110,
+      "tag": "INPUT",
+      "id": "",
+      "name": "",
+      "type": "file",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "dz-hidden-input"
+    },
+    {
+      "index": 111,
+      "tag": "INPUT",
+      "id": "",
+      "name": "",
+      "type": "file",
+      "placeholder": "",
+      "readonly": false,
+      "disabled": false,
+      "value": "",
+      "className": "dz-hidden-input"
+    }
+  ],
+  "lease_deed_date_0_fill": {
+    "success": false,
+    "error": "Locator.fill: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#lease"
+  },
+  "lease_deed_date_0_js": {
+    "success": true,
+    "value": "15/03/2020"
+  },
+  "date_regis_lease_deed0_fill": {
+    "success": false,
+    "error": "Locator.fill: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#date_"
+  },
+  "date_regis_lease_deed0_js": {
+    "success": true,
+    "value": "15/03/2020"
+  },
+  "lease_duration": {
+    "fill_works": true,
+    "accepts_alpha": true,
+    "accepts_negative": true
+  },
+  "valid_leased_submit": {
+    "navigated": true
+  },
+  "blank_leased_errors": [
+    "Please enter the lease land area",
+    "Please enter the leaser name",
+    "Please select a valid date for the 'Date of Lease Deed'",
+    "Please enter the lease deed duration"
+  ],
+  "blank_leased_blocked": true
+}

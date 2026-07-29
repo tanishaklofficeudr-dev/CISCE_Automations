@@ -1,0 +1,276 @@
+{
+  "page_headings": [
+    "Select Type of Affiliation"
+  ],
+  "dropzone_details": [
+    {
+      "elementId": "noc",
+      "acceptedFiles": "image/jpeg,image/bmp,image/gif,image/png,application/pdf",
+      "maxFilesize": 20,
+      "maxFiles": 1,
+      "uploadMultiple": false,
+      "paramName": "file",
+      "url": "https://dev-eaffiliation.cisce.org/preliminary/school/upload-documents",
+      "autoProcessQueue": true,
+      "addRemoveLinks": false,
+      "dictDefaultMessage": "Drop files here to upload",
+      "dictInvalidFileType": "You can't upload files of this type.",
+      "dictFileTooBig": "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      "dictMaxFilesExceeded": "You can not upload any more files.",
+      "currentFiles": 0,
+      "currentFileNames": [],
+      "clickable": true
+    },
+    {
+      "elementId": "land_certificate",
+      "acceptedFiles": "image/jpeg,image/bmp,image/gif,image/png,application/pdf",
+      "maxFilesize": 20,
+      "maxFiles": 1,
+      "uploadMultiple": false,
+      "paramName": "file",
+      "url": "https://dev-eaffiliation.cisce.org/preliminary/school/upload-documents",
+      "autoProcessQueue": true,
+      "addRemoveLinks": false,
+      "dictDefaultMessage": "Drop files here to upload",
+      "dictInvalidFileType": "You can't upload files of this type.",
+      "dictFileTooBig": "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      "dictMaxFilesExceeded": "You can not upload any more files.",
+      "currentFiles": 0,
+      "currentFileNames": [],
+      "clickable": true
+    },
+    {
+      "elementId": "trust",
+      "acceptedFiles": "image/jpeg,image/bmp,image/gif,image/png,application/pdf",
+      "maxFilesize": 20,
+      "maxFiles": 1,
+      "uploadMultiple": false,
+      "paramName": "file",
+      "url": "https://dev-eaffiliation.cisce.org/preliminary/school/upload-documents",
+      "autoProcessQueue": true,
+      "addRemoveLinks": false,
+      "dictDefaultMessage": "Drop files here to upload",
+      "dictInvalidFileType": "You can't upload files of this type.",
+      "dictFileTooBig": "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      "dictMaxFilesExceeded": "You can not upload any more files.",
+      "currentFiles": 0,
+      "currentFileNames": [],
+      "clickable": true
+    },
+    {
+      "elementId": "land",
+      "acceptedFiles": "image/jpeg,image/bmp,image/gif,image/png,application/pdf",
+      "maxFilesize": 20,
+      "maxFiles": 1,
+      "uploadMultiple": false,
+      "paramName": "file",
+      "url": "https://dev-eaffiliation.cisce.org/preliminary/school/upload-documents",
+      "autoProcessQueue": true,
+      "addRemoveLinks": false,
+      "dictDefaultMessage": "Drop files here to upload",
+      "dictInvalidFileType": "You can't upload files of this type.",
+      "dictFileTooBig": "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      "dictMaxFilesExceeded": "You can not upload any more files.",
+      "currentFiles": 0,
+      "currentFileNames": [],
+      "clickable": true
+    },
+    {
+      "elementId": "school_image",
+      "acceptedFiles": "image/jpeg,image/jpg,image/png,application/pdf",
+      "maxFilesize": 20,
+      "maxFiles": 1,
+      "uploadMultiple": false,
+      "paramName": "file",
+      "url": "https://dev-eaffiliation.cisce.org/preliminary/school/upload-documents",
+      "autoProcessQueue": true,
+      "addRemoveLinks": false,
+      "dictDefaultMessage": "Drop files here to upload",
+      "dictInvalidFileType": "You can't upload files of this type.",
+      "dictFileTooBig": "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+      "dictMaxFilesExceeded": "You can not upload any more files.",
+      "currentFiles": 0,
+      "currentFileNames": [],
+      "clickable": true
+    }
+  ],
+  "noc_upload_error": "Page.evaluate: Execution context was destroyed, most likely because of a navigation",
+  "upload_land_certificate": {
+    "fileCount": 1,
+    "status": "success"
+  },
+  "upload_trust": {
+    "fileCount": 1,
+    "status": "success"
+  },
+  "upload_land": {
+    "fileCount": 1,
+    "status": "success"
+  },
+  "upload_school_image": {
+    "fileCount": 1,
+    "status": "success"
+  },
+  "download_elements": [
+    {
+      "tag": "A",
+      "text": "Download for\n                    Notarization",
+      "href": "https://dev-eaffiliation.cisce.org/preliminary/school/download_pdf/eyJpdiI6ImFGaGM1dldvNmZmcHpCbjhjZ",
+      "id": "",
+      "className": "rounded-3 downloadnotarizationbutton",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "NOC Document.pdf",
+      "href": "https://dev-eaffiliation.cisce.org/downloads/bc28b10c07f196c9e31ee3c8299f6fa6",
+      "id": "",
+      "className": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Certificate of Land.pdf",
+      "href": "https://dev-eaffiliation.cisce.org/downloads/16b45599bde505a52bbc14b563432ff5",
+      "id": "",
+      "className": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Trust / Society / Company Document.pdf",
+      "href": "https://dev-eaffiliation.cisce.org/downloads/a004b63a0157b91a1530b9293080fa57",
+      "id": "",
+      "className": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "Land Ownership Document.pdf",
+      "href": "https://dev-eaffiliation.cisce.org/downloads/21c54fce44ecfd493305cb7e1a70ac85",
+      "id": "",
+      "className": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "A",
+      "text": "School Image.pdf",
+      "href": "https://dev-eaffiliation.cisce.org/downloads/7502a4cadc7315bc9935cf4deaeaeb3d",
+      "id": "",
+      "className": "",
+      "visible": true,
+      "disabled": false
+    }
+  ],
+  "download_attempt": "Timeout 10000ms exceeded while waiting for event \"download\"\n====================",
+  "textarea": {
+    "visible": true,
+    "props": {
+      "error": "textarea not found via query"
+    },
+    "fill_works": true
+  },
+  "affiliation_radios": [
+    {
+      "id": "",
+      "value": "2",
+      "checked": true,
+      "disabled": false,
+      "visible": true,
+      "labelText": "Provisional Affiliation up to Class X:\n                             Under this category, the school may apply for Provisional Affiliation for running Classes up to X (10th).",
+      "required": false
+    },
+    {
+      "id": "",
+      "value": "3",
+      "checked": false,
+      "disabled": false,
+      "visible": true,
+      "labelText": "Composite Affiliation up to Class XII:\n                             Under this category, the school may apply for Affiliation for running Classes from Pre-Primary stage onwards up to Class XII (12th).",
+      "required": false
+    },
+    {
+      "id": "",
+      "value": "4",
+      "checked": false,
+      "disabled": false,
+      "visible": true,
+      "labelText": "Affiliation Under Switch Over Category up to class X:\n                             Under this category, schools already affiliated with other Boards of School Education can seek affiliation with CISCE up to Class X (10th).",
+      "required": false
+    },
+    {
+      "id": "",
+      "value": "5",
+      "checked": false,
+      "disabled": false,
+      "visible": true,
+      "labelText": "Affiliation Under Switch Over Category up to class XII:\n                             Under this category, schools already affiliated with other Boards of School Education can seek affiliation with CISCE up to Class XII (12th).",
+      "required": false
+    }
+  ],
+  "affiliation_select_test": [
+    {
+      "value": "2",
+      "checked": true
+    },
+    {
+      "value": "3",
+      "checked": false
+    },
+    {
+      "value": "4",
+      "checked": false
+    },
+    {
+      "value": "5",
+      "checked": false
+    }
+  ],
+  "checkboxes": [
+    {
+      "selector": "#verify_composite",
+      "id": "verify_composite",
+      "checked": true,
+      "disabled": false,
+      "visible": true,
+      "required": false,
+      "labelText": "",
+      "parentText": "\"I hereby acknowledge that the Council will not be held responsible in case an incorrect affiliation"
+    },
+    {
+      "selector": "#verify",
+      "id": "verify",
+      "checked": true,
+      "disabled": false,
+      "visible": true,
+      "required": false,
+      "labelText": "",
+      "parentText": "\"I hereby certify that all the information furnished above is true to the best of\n                  "
+    }
+  ],
+  "checkbox_check_test": {
+    "verify_composite": true,
+    "verify": true
+  },
+  "proceed_button": {
+    "visible": true,
+    "disabled": false,
+    "props": {
+      "id": "",
+      "type": "button",
+      "disabled": false,
+      "className": "btn btn-primary PreliminaryTabsFormSubmit",
+      "onclick": "UploadDocuments(event)",
+      "formAction": "https://dev-eaffiliation.cisce.org/preliminary/school/dashboard"
+    }
+  },
+  "proceed_result": {
+    "navigated": true,
+    "url": "https://dev-eaffiliation.cisce.org/preliminary/school/payment-gateway"
+  }
+}

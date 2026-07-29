@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+trace.zip
+
+# Allure
+allure-results/
+allure-report/
+history/
+
+# Reports
+reports/
+htmlcov/
+coverage/
+.coverage
+.coverage.*
+
+# Screenshots / Videos
+screenshots/
+videos/
+artifacts/
+downloads/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.bak
+*.old
+
+# Secrets
+.env
+.env.**
+*.key
+
+# Excel Temporary Files
+~$*.xlsx
+
+# Node
+node_modules/
+
+# Local Git Files
+.git/

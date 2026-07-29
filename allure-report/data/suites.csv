@@ -1,25 +1,641 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"Verify that registration with an already registered mobile number fails.","0","R3 - Registration with duplicate mobile fails","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that unauthenticated users are redirected to login page.","0","R10 - Unauthenticated user redirected to login","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that trust/society documents can be uploaded successfully.","1","S11 - School can upload trust/society details","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationSanity","test_sanity_regression_suite","",""
-"Verify that school user can access the preliminary affiliation dashboard.","1","S8 - School can access preliminary dashboard","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationSanity","test_sanity_regression_suite","",""
-"Verify that trust/society details form data is saved correctly.","0","R18 - Trust details form saves correctly","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationRegression","test_sanity_regression_suite","",""
-"Verify that multiple failed login attempts are handled properly.","1","R12 - Multiple failed login attempts handling","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that council user can view submitted preliminary applications.","1","S13 - Council can view preliminary applications","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationSanity","test_sanity_regression_suite","",""
-"Verify that registration with invalid country code is rejected.","1","R4 - Registration with invalid country code fails","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that the login page loads successfully and is accessible.","1","S1 - User can access login page","tests","2026-06-30","passed","2026-06-30","TestAuthenticationSanity","test_sanity_regression_suite","",""
-"Verify that school details form can be filled and submitted successfully.","2","S9 - School can submit school details form","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationSanity","test_sanity_regression_suite","",""
-"Verify that logout properly terminates the user session.","0","S5 - Logout terminates session","tests","2026-06-30","passed","2026-06-30","TestAuthenticationSanity","test_sanity_regression_suite","",""
-"Verify that expired OTP is properly rejected.","0","R14 - OTP expiry validation works","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that uploading invalid file types for NOC document is rejected.","0","R17 - NOC upload with invalid file type rejected","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationRegression","test_sanity_regression_suite","",""
-"Verify that council user cannot access school-specific routes.","0","R7 - Council role cannot access school routes","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify proper validation message is shown for invalid credentials.","0","R1 - Login with invalid credentials shows error","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that school user cannot access council-specific routes.","1","R9 - School role cannot access council routes","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that required field validations work on school details form.","1","R16 - School details form validation (required fields)","tests","2026-06-30","passed","2026-06-30","TestPreliminaryAffiliationRegression","test_sanity_regression_suite","",""
-"Verify that user can login with valid mobile number and password.","1","S2 - User can login with valid credentials","tests","2026-06-30","passed","2026-06-30","TestAuthenticationSanity","test_sanity_regression_suite","",""
-"Verify that password reset with invalid OTP is handled correctly.","1","R5 - Password reset with invalid OTP fails","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
-"Verify that resend password/OTP functionality works correctly.","1","R15 - Resend password functionality works","tests","2026-06-30","passed","2026-06-30","TestAuthenticationRegression","test_sanity_regression_suite","",""
+"Field: registration_no
+Value: '(blank)'
+Expected: Registration number is required.
+Remarks: None","9447","TRUST_FMT_002 - Registration number blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Trust Details","",""
+"LOGIN_UI_002: Verify password field masks input.","3290","LOGIN_UI_002 — Password field masks characters","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","UI & Navigation","Authentication","",""
+"REG_VAL_001: Registration page loads with all required fields visible.","3715","REG_VAL_001 — Registration page loads correctly","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Validation","Authentication","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH008
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","136228","Preliminary Form - SCH008","CISCE E-Affiliation","2026-07-22","passed","2026-07-22","Smoke","Preliminary Form","",""
+"Test type: missing_checkbox
+Target: None
+File type: pdf
+Expected error: Both declarations are required
+Remarks: Exact error message TBD","37063","UPLOAD_NEG_005 — Only one checkbox checked - Proceed blocked","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative","Upload Documents","",""
+"
+LAND_VAL_001: Verify all mandatory fields display validation errors
+when Single→Owned form is submitted with all text fields blank.
+
+Confirmed validation messages:
+  - ""Please enter a valid land area""
+  - ""Please specify where it is situated""
+","0","test_land_val_001_owned_all_blank[chromium]","","2026-07-08","skipped","2026-07-08","","","",""
+"Flow: Single_Leased
+Field: renewal_duration
+Value: '(blank)'
+Expected: Please enter the renewal duration
+Remarks: Conditional mandatory check","14110","LAND_NEG_009 — Renewal Duration blank when Renewal=Yes","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Field: land_area
+Value: '(blank)'
+Expected: Please enter a valid land area
+Remarks: Confirmed by diagnostic","11083","LAND_NEG_001 — Land Area blank (with other fields valid)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Field: contact_person
+Value length: 1
+Expected: ACCEPT","4329","SCH_BND_EXT_06 — Contact person with 1 character","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: address_line_1
+Value length: 1
+Expected outcome: ACCEPT
+Message: Single char may be accepted","4306","ADDR_BND_001 — Address line — 1 character (minimum)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Address Details","",""
+"Field: office_address
+Value: '(blank)'
+Expected error: Please add office address","8286","NOC_FMT_003 — Office Address blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"School: Model School
+Classification: Day
+Type: Co-ed.
+Category: Government","6840","SCH_POS_08 — Valid UDISE number with exactly 11 digits","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Bank: ICICI Bank
+Alt text: ICICI
+Amount: ₹10000.00
+Expected: User reaches ICICI bank payment page without error","23891","PAYMENT_POS_002 — ICICI Bank","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Payment Gateway","",""
+"Field: owner_name
+Value length: 300
+Expected outcome: ACCEPT
+Message: Long name handling","6188","TRUST_BND_002 - Trust name - 300 characters (long)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Trust Details","",""
+"Field: contact_person
+Value length: 100
+Expected: ACCEPT","3888","SCH_BND_EXT_07 — Contact person with 100 characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH010
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","151065","Preliminary Form - SCH010","CISCE E-Affiliation","2026-07-22","passed","2026-07-22","Smoke","Preliminary Form","",""
+"Field: owner_name
+Value length: 1
+Expected outcome: ACCEPT
+Message: Single char may be accepted","6397","TRUST_BND_001 - Trust name - 1 character (min)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Trust Details","",""
+"Field: file_size
+Value: '1KB'
+Expected: ACCEPT","6205","UPLOAD_BND_002 — Smallest valid file (1 KB)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Upload Documents","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH004
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","9547","Preliminary Form - SCH004","","2026-07-13","passed","2026-07-13","","","",""
+"Field: land_area
+Value: '1' (length=1)
+Expected outcome: ACCEPT
+Message: Minimum value accepted","9756","LAND_BND_001 — Land Area - minimum value (1)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"
+LAND_UI_005: Verify switching from Single→Owned to Multiple:
+- Owned fields become hidden
+- Multiple fields become visible
+","5649","LAND_UI_005 — Path switching resets form (Single→Multiple)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Dynamic UI","Certificate of Land","",""
+"Authority: District Education Officer
+Designation: Director of Education
+Office Address: State Education Office, Civil Lines, Jaipur
+Country Value: 2
+State Value: 30
+Reference: NOC-REG-2025-003
+Date: 16/05/2025","8219","NOC_POS_001 — Valid complete NOC — India, Rajasthan, past date","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","NOC Details","",""
+"Verify login field boundary values.","10349","LOGIN_BND_002 — Password minimum length (1 char)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Login","Authentication","",""
+"Field: zip_pin
+Value: '1234567'
+Expected error: The zip field must be 6 digits.","6626","ADDR_FMT_002 — PIN code more than 6 digits","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"Verify registration field boundary values.","11815","REG_BND_001 — Mobile exactly 10 digits","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Registration","Authentication","",""
+"Flow: Single_Owned
+Area Unit: Square Meter
+Land Area: 7500
+Title Document: Gift Deed
+Sale Deed Favor: None
+Date: 01/09/2021","9856","LAND_POS_004 — Valid Owned - Gift Deed","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"Flow: Multiple
+Field: no_of_plots
+Value: '2'
+Expected outcome: ACCEPT","9793","LAND_BND_006 — Number of Plots - minimum for multiple (2)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"Flow: Multiple
+Plots: 3
+Plot Number: 1
+Contiguous: Yes
+Boundary Wall: None
+Explanation: None","13179","LAND_POS_008 — Valid Multiple - Contiguous Yes","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"Flow: Single_Owned
+Area Unit: Square Yard
+Land Area: 8000
+Title Document: Sale Deed
+Sale Deed Favor: Trust/Society/Company
+Date: 10/01/2018","10263","LAND_POS_003 — Valid Owned - Sale Deed, favor=Trust/Society","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH009
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","136094","Preliminary Form - SCH009","CISCE E-Affiliation","2026-07-22","passed","2026-07-22","Smoke","Preliminary Form","",""
+"File type: pdf
+Target: all
+Affiliation: Affiliation Under Switch Over Category up to class X
+Comments: Switch over X test","48919","UPLOAD_POS_003 — Full flow - Switch Over X","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Test type: double_click
+Target: None
+File type: pdf
+Expected error: No duplicate navigation or payment
+Remarks: Payment safety test","54571","UPLOAD_NEG_007 — Double-click Proceed - no duplicate submission","CISCE E-Affiliation","2026-07-09","broken","2026-07-09","Negative","Upload Documents","",""
+"
+ADDR_VAL_001: Verify all mandatory text fields display validation errors
+when form is submitted with cleared address and ZIP fields.
+
+Clears address line and ZIP, clicks Next.
+Asserts: Form does not navigate + mandatory errors visible.
+","6434","ADDR_VAL_001 — All required text fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","Address Details","",""
+"Action: Click the Download for Notarization link
+Expected: PDF download starts or new tab opens","3119","UPLOAD_UI_002 — Click Download for Notarization link","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Dynamic UI","Upload Documents","",""
+"Field: school_name
+Value: '(blank)'
+Expected: School name is required","3672","SCH_NEG_01 — Blank school name - form should not proceed","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Test type: missing_upload
+Target: all_except_one
+File type: pdf
+Expected error: Please upload all required documents
+Remarks: Exact error message TBD","22399","UPLOAD_NEG_004 — Only 4 of 5 documents uploaded - Proceed blocked","CISCE E-Affiliation","2026-07-09","failed","2026-07-09","Negative","Upload Documents","",""
+"
+LAND_UI_003: Verify Renewal Clause toggle:
+- Renewal=Yes → Duration of Renewal field (#renewal_lease_deed_duration_0) APPEARS
+- Renewal=No → Duration field DISAPPEARS
+- Value filled in Duration does NOT persist after toggling back
+","3265","LAND_UI_003 — Leased Renewal toggle (show + hide Duration)","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Dynamic UI","Certificate of Land","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH003
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","753953","Preliminary Form - SCH003","","2026-07-15","passed","2026-07-15","","","",""
+"Verify registration rejects invalid input.","7543","REG_NEG_008 — Invalid email format (no @)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Field: land_area
+Value: '-500'
+Expected: Land area must be a positive number
+Remarks: None","10977","LAND_NEG_004 — Land Area with negative value","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Verify successful login with valid credentials.","7039","LOGIN_POS_001 — Valid login with correct credentials","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Authentication","",""
+"Field: filename
+Value: 'test file (copy) @#$.pdf'
+Expected: ACCEPT","6196","UPLOAD_BND_004 — File with special characters in filename","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Upload Documents","",""
+"File type: bmp
+Target: NOC Document
+Affiliation: Provisional Affiliation up to Class X
+Comments: (empty)","23455","UPLOAD_POS_009 — BMP upload to NOC (accepted by standard dropzones)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Field: document_date
+Value: '08/07/2026' (length=10)
+Expected outcome: ACCEPT
+Message: Today date accepted at boundary","10204","LAND_BND_003 — Document Date - today boundary","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"Verify login rejects invalid credentials.","9967","LOGIN_NEG_006 — Mobile with alphabets","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"Field: school_name
+Value length: 2
+Expected: ACCEPT","3714","SCH_BND_EXT_02 — School name with exactly 2 characters","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Regression","Preliminary Form","",""
+"LOGIN_SEC_001: Verify multiple browser session behavior with same account.","22831","LOGIN_SEC_001 — Multiple session behavior","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Security","Authentication","",""
+"Field: registration_date
+Value: '(blank)'
+Expected: Date of Registration is required.
+Remarks: None","16425","TRUST_FMT_004 - Registration date empty (cleared via JS)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Trust Details","",""
+"Verify registration rejects invalid input.","9142","REG_NEG_007 — Mobile with special characters","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"School: Delhi Public School
+Classification: Day
+Type: Co-ed.
+Category: Private","7101","SCH_POS_01 — Valid complete school details with Day classification","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"LOGIN_NAV_004: Verify Forgot Password flow navigates and accepts request.","14417","LOGIN_NAV_004 — Forgot Password flow","","2026-07-09","passed","2026-07-09","","","",""
+"Field: situated_in
+Value: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' (length=500)
+Expected outcome: ACCEPT
+Message: Long text accepted or truncated","9784","LAND_BND_004 — Situated In - 500 characters (maxlength)","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Boundary","Certificate of Land","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH004
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","210762","Preliminary Form - SCH004","CISCE E-Affiliation","2026-07-24","broken","2026-07-24","Smoke","Preliminary Form","",""
+"Flow: Multiple
+Plots: 4
+Plot Number: 2
+Contiguous: No
+Boundary Wall: No
+Explanation: The school building spans across two non-contiguou","12043","LAND_POS_009 — Valid Multiple - Full Nested Path","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"Bank: HDFC Collect Now
+Alt text: HDFC
+Amount: ₹10000.00
+Expected: User reaches HDFC bank payment page without error","24588","PAYMENT_POS_001 — HDFC Collect Now","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Payment Gateway","",""
+"Field: noc_reference_number
+Value: 'NOC-REG-2025-001'
+Expected error: This NOC Reference Number is already in use by another school.","9879","NOC_FMT_007 — Pre-registered NOC Reference Number - duplicate validation","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"Field: establishment_date
+Value: '(blank)'
+Expected: Date of Establishment is required.
+Remarks: None","11582","TRUST_FMT_003 - Establishment date empty (cleared via JS)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Trust Details","",""
+"
+LAND_UI_004: Verify the nested conditional chain for Multiple Plots:
+1. Select Multiple → form loads
+2. Contiguous=No → Boundary Wall question APPEARS
+3. Boundary=No → Explanation textarea APPEARS
+4. Toggle Boundary=Yes → Explanation DISAPPEARS
+5. Toggle Contiguous=Yes → Boundary question DISAPPEARS
+","9892","LAND_UI_004 — Multiple plot nested conditional chain","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Dynamic UI","Certificate of Land","",""
+"School: Kendriya Vidyalaya No.1
+Classification: Day
+Type: Co-ed.
+Category: Government","6833","SCH_POS_04 — Valid school with Government category","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Flow: Single_Owned
+Area Unit: Square Meter
+Land Area: 5000
+Title Document: Conveyance Deed
+Sale Deed Favor: None
+Date: 15/03/2020","10085","LAND_POS_001 — Valid Owned - Conveyance Deed","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"LOGIN_VAL_002: Login shows clear error for invalid credentials.","8666","LOGIN_VAL_002 — Error message displayed for invalid login","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Validation","Authentication","",""
+"File type: pdf
+Target: all
+Affiliation: Provisional Affiliation up to Class X
+Comments: Test @#$%^&* special chars
+Second line
+Unicode: áé","23992","UPLOAD_POS_008 — Comments with special chars + Unicode + multiline","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Field: zip_pin
+Value: '123'
+Expected error: The zip field must be 6 digits.","6574","ADDR_FMT_003 — PIN code with 3 digits only","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"Field: land_area
+Value: 'abcdef'
+Expected: Land area must be a number
+Remarks: None","10994","LAND_NEG_003 — Land Area with alphabets","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Field: school_name
+Value length: 1
+Expected: ACCEPT","3691","SCH_BND_EXT_01 — School name with exactly 1 character","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"
+LAND_UI_002: Verify Sale Deed conditional field appears when
+""Sale Deed"" is selected and disappears when changed to another option.
+","5440","LAND_UI_002 — Sale Deed conditional toggle (show + hide)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Dynamic UI","Certificate of Land","",""
+"School: Loreto Convent School
+Classification: Day
+Type: Girls
+Category: Private","6777","SCH_POS_03 — Valid school with Girls type","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: office_address
+Value length: 201
+Expected outcome: REJECT
+Message: Office address must not be greater than 200","6426","NOC_BND_002 — Office Address — 201 characters (over max 200)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","NOC Details","",""
+"Verify registration rejects invalid input.","7557","REG_NEG_010 — Email with spaces","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Field: land_area
+Value: '999999999' (length=9)
+Expected outcome: ACCEPT
+Message: Large value accepted","10045","LAND_BND_002 — Land Area - large value (999999999)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"Field: noc_authority
+Value length: 1
+Expected outcome: REJECT
+Message: NOC Issuing Authority must be between 3 and 100 characters long.","7086","NOC_BND_001 — NOC Authority — 1 character (minimum)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","NOC Details","",""
+"Field: address_line_1
+Value: '(blank)'
+Expected error: Address is required.","6532","ADDR_FMT_004 — Address line blank (cleared on existing account)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"School: St. Mary's High School - Branch
+Classification: Day
+Type: Girls
+Category: Private","5351","SCH_POS_06 — Valid school name with special characters (hyphen, apostrophe)","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Regression","Preliminary Form","",""
+"Verify registration rejects invalid input.","9979","REG_NEG_011 — Duplicate mobile number (already registered)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Verify registration rejects invalid input.","10086","REG_NEG_005 — Mobile less than 10 digits","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Address: 123 Main Street, Civil Lines
+Country: India
+State: Rajasthan
+ZIP: 302001
+Locality: Urban","12433","ADDR_POS_001 — Valid complete address — India, Rajasthan","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Address Details","",""
+"Action: Upload files then navigate Back then return
+Expected: Previously uploaded files still shown","12758","UPLOAD_UI_004 — Upload persistence after Back navigation","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Dynamic UI","Upload Documents","",""
+"Verify registration field boundary values.","8937","REG_BND_002 — Email minimum valid (a@b.co)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Registration","Authentication","",""
+"
+SCH_VAL_001: Verify all mandatory fields display validation errors
+when form is submitted without entering any data.
+
+Clears all text fields and clicks Next.
+Asserts: Page does not navigate + all mandatory errors visible.
+","5260","SCH_VAL_001 — All required fields blank shows all errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH007
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","109376","Preliminary Form - SCH007","CISCE E-Affiliation","2026-07-21","passed","2026-07-21","Smoke","Preliminary Form","",""
+"Verify login rejects invalid credentials.","10629","LOGIN_NEG_003 — Mobile blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"Test type: invalid_type
+Target: NOC Document
+File type: exe
+Expected error: You can't upload files of this type.
+Remarks: None","5217","UPLOAD_NEG_001 — .exe file - invalid type error","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative","Upload Documents","",""
+"Field: udise_number
+Value: 'abcdefghij'
+Expected: U-DISE number must be 11 digits","3689","SCH_NEG_07 — UDISE number with alphabets","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: school_name
+Value length: 200
+Expected: ACCEPT","4300","SCH_BND_EXT_04 — School name with 200 characters (max)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"
+LAND_UI_001: Verify all Owned path fields become visible
+after selecting Single + Owned radio buttons.
+","3295","LAND_UI_001 — Owned form loads correctly after radio selection","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Dynamic UI","Certificate of Land","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH001
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","213116","Preliminary Form - SCH001","CISCE E-Affiliation","2026-07-24","passed","2026-07-24","Smoke","Preliminary Form","",""
+"Flow: Single_Leased
+Field: lease_deed_duration
+Value: 'abcdef'
+Expected: lease_deed_duration.0 field must be a number
+Remarks: Leased path validation","13744","LAND_NEG_008 — Lease Deed Duration with alphabets","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Flow: Single_Leased
+Area Unit: Square Meter
+Land Area: 3000
+Lessee: XYZ Education Society
+Lessor: Municipal Corporation
+Lease Date: 15/03/2018
+Duration: 25
+Renewal: Yes
+Renewal Duration: 10","13487","LAND_POS_007 — Valid Leased - Renewal Yes with Duration","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"
+LAND_VAL_001: Verify all mandatory fields display validation errors
+when Single→Owned form is submitted with all text fields blank.
+
+Confirmed validation messages:
+  - ""Please enter a valid land area""
+  - ""Please specify where it is situated""
+","13967","LAND_VAL_001 — Owned: All mandatory fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","Certificate of Land","",""
+"Flow: Multiple
+Field: no_of_plots
+Value: '0'
+Expected: plot number school building field must be less than or equal to
+Remarks: Multiple path validation","9976","LAND_NEG_010 — Number of Plots = 0","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Verify registration rejects invalid input.","9587","REG_NEG_006 — Mobile more than 10 digits","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"
+UPLOAD_VAL_003: All uploads + affiliation selected but checkboxes unchecked.
+Expected: Form blocked — checkboxes required.
+","0","test_upload_val_003_no_checkboxes[chromium]","","2026-07-09","skipped","2026-07-09","","","",""
+"LOGIN_VAL_001: Login page loads with all required fields.","4605","LOGIN_VAL_001 — Login page loads correctly","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Validation","Authentication","",""
+"Authority: State Education Board Secretary
+Designation: Joint Secretary
+Office Address: Maharashtra Education Board, Pune
+Country Value: 2
+State Value: 21
+Reference: NOC-MAH-2025-004
+Date: 10/03/2025","8100","NOC_POS_002 — Valid NOC with different state (Maharashtra)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","NOC Details","",""
 "End-to-End Regression & Sanity Test
 
 School ID: SCH005
-Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","154658","Preliminary Form - SCH005","tests","2026-06-30","passed","2026-06-30","","test_preliminary_form_main","",""
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","129357","Preliminary Form - SCH005","CISCE E-Affiliation","2026-07-24","passed","2026-07-24","Smoke","Preliminary Form","",""
+"Field: zip_pin
+Value length: 6
+Expected outcome: ACCEPT
+Message: The zip field must be 6 digits.","4433","ADDR_BND_003 — PIN code exactly 6 digits (valid boundary)","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Boundary","Address Details","",""
+"Action: Select affiliation type then interact with other controls
+Expected: Radio selection maintained","1102","UPLOAD_UI_005 — Radio selection persistence after page interaction","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Dynamic UI","Upload Documents","",""
+"
+LAND_VAL_002: Verify mandatory fields display validation errors
+when Single→Leased form is submitted with all fields blank.
+
+Confirmed validation messages (from diagnostic):
+  - ""Please enter the lease land area""
+  - ""Please enter the leaser name""
+  - ""Please select a valid date for the 'Date of Lease Deed'""
+  - ""Please enter the lease deed duration""
+","18471","LAND_VAL_002 — Leased: All mandatory fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","Certificate of Land","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH002
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","181103","Preliminary Form - SCH002","CISCE E-Affiliation","2026-07-24","passed","2026-07-24","Smoke","Preliminary Form","",""
+"Verify login rejects invalid credentials.","11226","LOGIN_NEG_007 — Mobile too short (5 digits)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"Verify registration field boundary values.","789","REG_BND_002 — Email minimum valid (a@b.co)","","2026-07-09","passed","2026-07-09","","","",""
+"Verify login rejects invalid credentials.","10260","LOGIN_NEG_002 — Invalid password","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"Verify registration rejects invalid input.","9205","REG_NEG_001 — Mobile number blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"
+UPLOAD_VAL_002: All uploads done but no affiliation type selected.
+Expected: Form blocked — affiliation required.
+","28612","UPLOAD_VAL_002 — All uploads but no affiliation","CISCE E-Affiliation","2026-07-09","failed","2026-07-09","Validation","Upload Documents","",""
+"Verify registration rejects invalid input.","9722","REG_NEG_004 — Mobile with alphabets","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Verify login field boundary values.","18516","LOGIN_BND_001 — Mobile exactly 10 digits (valid)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Login","Authentication","",""
+"
+TRUST_VAL_001: Verify all mandatory fields display validation errors
+when form is submitted with all text fields cleared and dates cleared.
+
+Clears: trust name, registration number, establishment date, registration date.
+Does NOT blank Ownership Type (disabled placeholder - not automatable).
+Asserts: Form does not navigate + mandatory errors visible.
+","16034","TRUST_VAL_001 - All mandatory fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","Trust Details","",""
+"Field: file_size
+Value: '20MB'
+Expected: ACCEPT or REJECT","3284","UPLOAD_BND_001 — File exactly at 20MB limit","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Upload Documents","",""
+"Field: registration_date
+Value: 'BEFORE_EST'
+Expected: Registration date cannot be before establishment date
+Remarks: APPLICATION DEFECT: Server accepts reg date before est date when set via JS. Calendar UI prevents this manually but no server-side validation exists.","7027","TRUST_FMT_006 - Registration date before establishment date (server should reject but does not)","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Negative","Trust Details","",""
+"Flow: Single_Leased
+Area Unit: Square Meter
+Land Area: 3000
+Lessee: ABC School Trust
+Lessor: State Government
+Lease Date: 10/05/2015
+Duration: 30
+Renewal: No
+Renewal Duration: None","15945","LAND_POS_006 — Valid Leased - Renewal No","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Positive","Certificate of Land","",""
+"Field: website
+Value length: 4
+Expected: ACCEPT","3685","SCH_BND_EXT_09 — Website field left completely empty (optional)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: zip_pin
+Value length: 6
+Expected outcome: ACCEPT
+Message: The zip field must be 6 digits.","2435","ADDR_BND_003 — PIN code exactly 6 digits (valid boundary)","","2026-07-09","passed","2026-07-09","","","",""
+"Flow: Single_Leased
+Field: land_area
+Value: '(blank)'
+Expected: Please enter the lease land area
+Remarks: Leased path validation","12148","LAND_NEG_007 — Lease Land Area blank (with other fields valid)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"File type: png
+Target: School Image
+Affiliation: Provisional Affiliation up to Class X
+Comments: (empty)","28283","UPLOAD_POS_006 — PNG upload to School Image","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Flow: Single_Leased
+Field: lease_deed_duration
+Value: '1'
+Expected outcome: ACCEPT","10656","LAND_BND_005 — Lease Deed Duration - minimum value (1)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"File type: pdf
+Target: all
+Affiliation: Affiliation Under Switch Over Category up to class XII
+Comments: Switch over XII test","41111","UPLOAD_POS_004 — Full flow - Switch Over XII","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"
+NOC_VAL_001: Verify all mandatory fields display validation errors
+when form is submitted with all text fields cleared and date cleared.
+
+Clears: authority, designation, office address, reference number, date.
+Asserts: Form does not navigate + mandatory errors visible.
+","7092","NOC_VAL_001 — All mandatory fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","NOC Details","",""
+"Verify login rejects invalid credentials.","12098","LOGIN_NEG_004 — Password blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"LOGIN_NAV_001: Successful login navigates to dashboard.","13038","LOGIN_NAV_001 — Login navigates to dashboard","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","UI & Navigation","Authentication","",""
+"
+LAND_VAL_003: Verify mandatory fields display validation errors
+when Multiple Plot form is submitted with all fields blank.
+","6631","LAND_VAL_003 — Multiple: All mandatory fields blank shows errors","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Validation","Certificate of Land","",""
+"File type: pdf
+Target: all
+Affiliation: Provisional Affiliation up to Class X
+Comments: Test comments for provisional affiliation","48778","UPLOAD_POS_001 — Full flow - Provisional Affiliation (PDF uploads)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Flow: Single_Owned
+Area Unit: Square Foot
+Land Area: 25000
+Title Document: Sale Deed
+Sale Deed Favor: School
+Date: 20/06/2019","10213","LAND_POS_002 — Valid Owned - Sale Deed, favor=School","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"Verify login rejects invalid credentials.","21883","LOGIN_NEG_001 — Invalid mobile (unregistered)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"File type: jpg
+Target: NOC Document
+Affiliation: Provisional Affiliation up to Class X
+Comments: (empty)","51145","UPLOAD_POS_005 — JPEG upload to NOC (non-PDF accepted type)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH003
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","163614","Preliminary Form - SCH003","CISCE E-Affiliation","2026-07-24","passed","2026-07-24","Smoke","Preliminary Form","",""
+"Flow: Multiple
+Field: explanation
+Value: '(blank)'
+Expected: Please provide an explanation
+Remarks: Conditional mandatory check","11879","LAND_NEG_011 — Explanation blank when required (Contiguous=No, Boundary=No)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Field: designation
+Value: '(blank)'
+Expected error: Please add Designation","8815","NOC_FMT_002 — Designation blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"Field: registration_no
+Value: 'TRUST-REG-2019-001'
+Expected: The registration number is already in use
+Remarks: None","8155","TRUST_FMT_007 - Registration Number already taken by another school - duplicate validation","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Trust Details","",""
+"Verify registration rejects invalid input.","11659","REG_NEG_009 — Email without domain","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"Field: owner_name
+Value: '(blank)'
+Expected: Ownership name is required.
+Remarks: None","8239","TRUST_FMT_001 - Trust name blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Trust Details","",""
+"Action: Upload PDF to NOC then check for download link
+Expected: Download link with filename visible after upload","3227","UPLOAD_UI_001 — Upload file - verify download link appears","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Dynamic UI","Upload Documents","",""
+"Verify successful registration with valid data.","8219","REG_POS_001 — Valid new registration with unique mobile and email","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Authentication","",""
+"Field: school_name
+Value length: 201
+Expected: ACCEPT","3681","SCH_BND_EXT_05 — School name with 201 characters (max+1)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"End-to-End Regression & Sanity Test
+
+School ID: SCH006
+Covers: Registration → Login → School Details → Address → NOC → Trust Details → Land Certificate → Document Upload → Payment","582190","Preliminary Form - SCH006","CISCE E-Affiliation","2026-07-21","passed","2026-07-21","Smoke","Preliminary Form","",""
+"
+Verify invalid uploads and missing prerequisites are rejected.
+","0","test_upload_negative[chromium-UPLOAD_NEG_003]","","2026-07-09","skipped","2026-07-09","","","",""
+"School: The Doon School
+Classification: Residential
+Type: Boys
+Category: Private","6670","SCH_POS_02 — Valid school with Residential classification","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: zip_pin
+Value: '12345'
+Expected error: The zip field must be 6 digits.","6633","ADDR_FMT_001 — PIN code less than 6 digits","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"Test type: invalid_type
+Target: School Image
+File type: bmp
+Expected error: You can't upload files of this type.
+Remarks: School Image restricts BMP","5494","UPLOAD_NEG_003 — BMP to School Image - invalid type","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative","Upload Documents","",""
+"Field: noc_reference_number
+Value: '(blank)'
+Expected error: The NOC Reference Number is required.","8278","NOC_FMT_004 — Reference Number blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"
+Verify complete payment gateway flow for a specific bank.
+Stops at the bank payment page — does NOT complete payment.
+
+Flow: Payment Summary → Pay ₹ → Select Bank → Proceed → Show QR → Continue → Bank Page
+","0","test_payment_gateway_flow[chromium-PAYMENT_POS_003]","CISCE E-Affiliation","2026-07-08","broken","2026-07-08","Positive","Payment Gateway","",""
+"LOGIN_NAV_004: Verify Forgot Password flow navigates and accepts request.","9895","LOGIN_NAV_004 — Forgot Password flow","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","UI & Navigation","Authentication","",""
+"Field: registration_no
+Value length: 50
+Expected outcome: ACCEPT
+Message: Long reg number handling","6267","TRUST_BND_003 - Registration number - 50 characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Trust Details","",""
+"Field: udise_number
+Value: '123@#$456!'
+Expected: U-DISE number must be 11 digits","3725","SCH_NEG_08 — UDISE number with special characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Field: address_line_1
+Value length: 300
+Expected outcome: REJECT
+Message: Address Line 1 is required and cannot exceed 100 characters.","4283","ADDR_BND_002 — Address line — 300 characters (long)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Address Details","",""
+"School: ABC School
+Classification: Day
+Type: Co-ed.
+Category: Private","6851","SCH_POS_05 — Valid school with minimum required fields only (no optional website)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Ownership: Society
+Name: National Education Society
+Est Date: 15/06/2015
+Reg Date: 20/08/2016
+Reg Number: SOC-REG-2016-003","8992","TRUST_POS_002 - Valid - Society type, different dates","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Trust Details","",""
+"Field: situated_in
+Value: '(blank)'
+Expected: Please specify where it is situated
+Remarks: Confirmed by diagnostic","11455","LAND_NEG_002 — Situated In blank (with other fields valid)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"
+UPLOAD_VAL_003: All uploads + affiliation selected but checkboxes unchecked.
+Expected: Form blocked — checkboxes required.
+","25745","UPLOAD_VAL_003 — All uploads + affiliation but no checkboxes","CISCE E-Affiliation","2026-07-09","broken","2026-07-09","Validation","Upload Documents","",""
+"Test type: max_files
+Target: NOC Document
+File type: pdf
+Expected error: You can not upload any more files.
+Remarks: None","10454","UPLOAD_NEG_006 — Second file to same dropzone - max files exceeded","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative","Upload Documents","",""
+"Field: website
+Value length: 196
+Expected: ACCEPT","3601","SCH_BND_EXT_08 — Website with maximum length URL (200 chars)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""
+"Address: Village Road, Near Panchayat Office
+Country: India
+State: Rajasthan
+ZIP: 302002
+Locality: Rural","15865","ADDR_POS_003 — Valid address with Rural locality","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Address Details","",""
+"Verify login rejects invalid credentials.","9951","LOGIN_NEG_005 — Both fields blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Login","Authentication","",""
+"File type: pdf
+Target: all
+Affiliation: Composite Affiliation up to Class XII
+Comments: Composite affiliation test","58138","UPLOAD_POS_002 — Full flow - Composite Affiliation","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Field: zip_pin
+Value: 'abcdef'
+Expected error: The zip field must be 6 digits.","6708","ADDR_FMT_005 — PIN code with 6 alphabetic characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"LOGIN_NAV_003: Direct dashboard URL without login is blocked.","5991","LOGIN_NAV_003 — Unauthorized access blocked","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","UI & Navigation","Authentication","",""
+"Field: noc_date
+Value: '(blank)'
+Expected error: Please select Date of NOC.","9046","NOC_FMT_005 — Date of NOC cleared (empty)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"LOGIN_VAL_002: Login shows clear error for invalid credentials.","5966","LOGIN_VAL_002 — Error message displayed for invalid login","","2026-07-09","passed","2026-07-09","","","",""
+"Field: sale_deed_favor
+Value: '(blank)'
+Expected: Please specify in favor of whom the sale deed is
+Remarks: Conditional mandatory check","10997","LAND_NEG_006 — Sale Deed Favor blank when Sale Deed selected","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Certificate of Land","",""
+"Address: 456 Park Road, Andheri West
+Country: India
+State: Maharashtra
+ZIP: 400001
+Locality: Urban","12873","ADDR_POS_002 — Valid address with different state — Maharashtra","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Address Details","",""
+"Field: comments
+Value: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+Expected: ACCEPT","579","UPLOAD_BND_003 — Comments textarea - 5000 characters","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary","Upload Documents","",""
+"Test type: oversize
+Target: NOC Document
+File type: pdf_large
+Expected error: File is too big
+Remarks: Generate large file dynamically","6391","UPLOAD_NEG_002 — File >20MB - file too big error","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative","Upload Documents","",""
+"
+UPLOAD_VAL_001: Click Proceed with NO uploads, no radio, no checkboxes.
+Expected: Form blocked — validation error shown.
+","5488","UPLOAD_VAL_001 — Proceed with nothing","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Validation","Upload Documents","",""
+"Verify registration rejects invalid input.","7713","REG_NEG_003 — Both fields blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"School: The International Academy of Science Technology and Research for Advanced Education
+Classification: Residential
+Type: Co-ed.
+Category: Private","5237","SCH_POS_07 — Valid school with long school name","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Regression","Preliminary Form","",""
+"Flow: Single_Owned
+Area Unit: Square Meter
+Land Area: 4000
+Title Document: Conveyance Deed
+Sale Deed Favor: None
+Date: 12/11/2017","9855","LAND_POS_005 — Valid Owned - Area Unit Square Foot","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Certificate of Land","",""
+"Field: noc_authority
+Value: '(blank)'
+Expected error: NOC Issuing Authority is required.","9418","NOC_FMT_001 — NOC Authority blank (cleared)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","NOC Details","",""
+"Verify registration rejects invalid input.","8069","REG_NEG_002 — Email blank","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Negative — Registration","Authentication","",""
+"File type: pdf
+Target: all
+Affiliation: Provisional Affiliation up to Class X
+Comments: Some relevant information for the school applicati","45583","UPLOAD_POS_007 — Empty comments + valid everything - proceeds","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Positive","Upload Documents","",""
+"Verify registration field boundary values.","9040","REG_BND_003 — Mobile starts with 0","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Registration","Authentication","",""
+"Field: noc_reference_number
+Value length: 50
+Expected outcome: ACCEPT
+Message: Long reference handling","8212","NOC_BND_003 — Reference Number — 50 characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","NOC Details","",""
+"Flow: Multiple
+Field: no_of_plots
+Value: '100'
+Expected outcome: ACCEPT","9849","LAND_BND_007 — Number of Plots - large value (100)","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Boundary","Certificate of Land","",""
+"Ownership: Trust
+Name: Shiksha Education Trust
+Est Date: 05/03/2018
+Reg Date: 10/04/2019
+Reg Number: TRUST-REG-2019-003","9119","TRUST_POS_001 - Valid - Trust type, valid name, past dates, valid reg number","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Positive","Trust Details","",""
+"Field: school_name
+Value: '123456789'
+Expected: Invalid school name","3826","SCH_NEG_03 — Only numbers in school name","CISCE E-Affiliation","2026-07-08","failed","2026-07-08","Regression","Preliminary Form","",""
+"Field: zip_pin
+Value: '12@#56'
+Expected error: The zip field must be 6 digits.","6678","ADDR_FMT_006 — PIN code with 6 mixed special characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Negative","Address Details","",""
+"Verify login field boundary values.","10177","LOGIN_BND_003 — Password very long (100 chars)","CISCE E-Affiliation","2026-07-09","passed","2026-07-09","Boundary — Login","Authentication","",""
+"Field: school_name
+Value length: 100
+Expected: ACCEPT","3718","SCH_BND_EXT_03 — School name with 100 characters","CISCE E-Affiliation","2026-07-08","passed","2026-07-08","Regression","Preliminary Form","",""

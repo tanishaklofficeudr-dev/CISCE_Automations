@@ -26,6 +26,12 @@ school_ids = excel.get_school_ids_to_execute()
 @allure.epic("CISCE Preliminary Affiliation Form")
 @allure.feature("End-to-End Form Submission")
 @allure.severity(allure.severity_level.CRITICAL)
+@allure.parent_suite("CISCE E-Affiliation")
+@allure.suite("Preliminary Form")
+@allure.sub_suite("Smoke")
+@pytest.mark.smoke
+@pytest.mark.e2e
+@pytest.mark.preliminary_form
 @pytest.mark.sanity
 @pytest.mark.regression
 @pytest.mark.parametrize("school_id", school_ids)
@@ -37,8 +43,8 @@ def test_preliminary_form(page, school_id):
         f"Covers: Registration → Login → School Details → Address → NOC → "
         f"Trust Details → Land Certificate → Document Upload → Payment"
     )
-    allure.dynamic.story("Complete Affiliation Form Submission")
-    allure.dynamic.tag("sanity", "regression", "e2e")
+    allure.dynamic.story("Complete Preliminary Form Submission")
+    allure.dynamic.tag("smoke", "sanity", "regression", "e2e", "preliminary_form")
     logger.info(f"Starting execution for {school_id}")
 
     try:
@@ -71,6 +77,7 @@ def test_preliminary_form(page, school_id):
             "Trust_Details",
             school_id
         )
+
 
         land_data = excel.get_row_by_school_id(
             "Land_Certificate",

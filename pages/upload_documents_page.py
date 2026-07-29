@@ -239,3 +239,162 @@ class UploadDocumentsPage:
         # Validate Home Page
         self.page.wait_for_url("**/school_view**", timeout=30000)
         
+
+    # ===========================================================================
+    # REGRESSION TEST METHODS (Additive — Upload Documents Module)
+    # ===========================================================================
+
+    # Dropzone ID mapping for each document type
+    UPLOAD_MAP = {
+        "NOC Document": "#noc",
+        "Certificate of Land": "#land_certificate",
+        "Trust / Society / Company Document": "#trust",
+        "Land Ownership Document": "#land",
+        "School Image": "#school_image",
+    }
+
+    def upload_single_file(self, document_label, file_path):
+        """
+        Upload a single file to a specific dropzone identified by its label.
+
+        Args:
+            document_label: Visible label text (e.g., "NOC Document", "School Image")
+            file_path: Absolute path to the file to upload
+
+        Returns:
+            None. Waits 3000ms after upload for async processing.
+
+        Raises:
+            TimeoutError if file chooser doesn't appear within 10s.
+        """
+        dropzone_id = self.UPLOAD_MAP.get(document_label)
+        container = self.page.locator("div.col-lg-6", has_text=document_label)
+
+        with self.page.expect_file_chooser(timeout=10000) as fc_info:
+            if dropzone_id:
+                container.locator(dropzone_id).click()
+            else:
+                container.locator(".dz-message").click()
+
+        fc_info.value.set_files(file_path)
+        self.page.wait_for_timeout(3000)
+
+    def upload_all_documents(self, file_path):
+        """
+        Upload the same file to all 5 dropzones in sequence.
+        Waits 3000ms between each upload for async processing.
+
+        Args:
+            file_path: Absolute path to the file to upload to all dropzones.
+        """
+        for label in self.UPLOAD_MAP.keys():
+            self.upload_single_file(label, file_path)
+
+    def select_affiliation_type(self, label):
+        """
+        Select an affiliation type radio button by its visible label text.
+
+        Args:
+            label: Full or partial label text (e.g., "Provisional Affiliation up to Class X")
+
+        Uses JavaScript to select by value since labels are ambiguous for Switch Over options.
+        Retries on context destruction (caused by upload navigation).
+        """
+        # Map label text to radio value
+        value_map = {
+            "Provisional Affiliation up to Class X": "2",
+            "Composite Affiliation up to Class XII": "3",
+            "Affiliation Under Switch Over Category up to class X": "4",
+            "Affiliation Under Switch Over Category up to class XII": "5",
+        }
+
+        value = value_map.get(label)
+        if value:
+            for attempt in range(3):
+                try:
+                    self.page.evaluate(f"""
+                        () => {{
+                            const radios = document.querySelectorAll('input[name="composite_type"]');
+                            for (const r of radios) {{
+                                if (r.value === '{value}') {{
+                                    r.checked = true;
+                                    r.dispatchEvent(new Event('change', {{ bubbles: true }}));
+                                    r.dispatchEvent(new Event('click', {{ bubbles: true }}));
+                                    break;
+                                }}
+                            }}
+                        }}
+                    """)
+                    break
+                except Exception:
+                    self.page.wait_for_timeout(2000)
+        else:
+            # Fallback: try get_by_label for unknown labels
+            self.page.get_by_label(label).first.check(force=True)
+        self.page.wait_for_timeout(500)
+
+    def check_declarations(self):
+        """
+        Check both declaration checkboxes (#verify_composite and #verify).
+        Uses JavaScript with retry to handle context destruction after uploads.
+        """
+        for attempt in range(3):
+            try:
+                self.page.evaluate("""
+                    () => {
+                        const vc = document.querySelector('#verify_composite');
+                        const v = document.querySelector('#verify');
+                        if (vc && !vc.checked) { vc.checked = true; vc.dispatchEvent(new Event('change', { bubbles: true })); }
+                        if (v && !v.checked) { v.checked = true; v.dispatchEvent(new Event('change', { bubbles: true })); }
+                    }
+                """)
+                break
+            except Exception:
+                self.page.wait_for_timeout(2000)
+        self.page.wait_for_timeout(500)
+
+    def fill_comments(self, text):
+        """
+        Fill the comments textarea with provided text.
+        If text is empty string, clears the textarea.
+
+        Args:
+            text: Comment text to fill (supports multiline, unicode, special chars)
+        """
+        textarea = self.page.get_by_role("textbox", name="Any relevant information that")
+        textarea.fill(text)
+
+    def click_proceed(self):
+        """
+        Click the 'Proceed to Payment' button.
+        Uses force=True to handle potential disabled state bypass.
+        """
+        self.page.get_by_role("button", name="Proceed to Payment").click(force=True)
+
+    def get_upload_status(self, dropzone_id):
+        """
+        Get the current upload status for a specific dropzone.
+
+        Args:
+            dropzone_id: The Dropzone element ID (e.g., 'noc', 'land_certificate')
+
+        Returns:
+            dict with keys: fileCount, status, hasError, hasSuccess, errorMessage
+        """
+        return self.page.evaluate(f"""
+            () => {{
+                const dz = Dropzone.instances.find(d => d.element.id === '{dropzone_id}');
+                if (!dz) return {{error: 'Dropzone not found', fileCount: 0}};
+                const files = dz.files || [];
+                const lastFile = files[files.length - 1];
+                const errorEl = dz.element.querySelector('.dz-error-message');
+                return {{
+                    fileCount: files.length,
+                    status: lastFile ? lastFile.status : 'empty',
+                    accepted: lastFile ? lastFile.accepted : null,
+                    hasError: !!dz.element.querySelector('.dz-error'),
+                    hasSuccess: !!dz.element.querySelector('.dz-success'),
+                    errorMessage: errorEl ? errorEl.textContent.trim() : ''
+                }};
+            }}
+        """)

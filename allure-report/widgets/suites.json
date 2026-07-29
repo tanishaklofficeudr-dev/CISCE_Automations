@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"e387fa4bb326b54ea8c19c2822aba374","name":"tests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":21,"unknown":0,"total":21}}]}
+{"total":10,"items":[{"uid":"6baa99fa544e754fd6d6d055fa413259","name":"CISCE E-Affiliation","statistic":{"failed":11,"broken":4,"skipped":0,"passed":152,"unknown":0,"total":167}}]}

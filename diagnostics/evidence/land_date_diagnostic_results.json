@@ -1,0 +1,201 @@
+{
+  "total_select_a_date_textboxes": 1,
+  "textbox_0": {
+    "id": "land_title_date0",
+    "name": "land_title_date[]",
+    "type": "text",
+    "placeholder": "Select a date",
+    "readonly": "readonly",
+    "visible": true,
+    "enabled": true,
+    "value": ""
+  },
+  "land_title_date0": {
+    "count": 1,
+    "visible": true,
+    "enabled": true,
+    "readonly": "readonly",
+    "type": "text",
+    "class": "form-control form-control-sm bd-clr datepicker date-picker",
+    "placeholder": "Select a date",
+    "value": ""
+  },
+  "last_textbox": {
+    "id": "land_title_date0",
+    "name": "land_title_date[]",
+    "visible": true,
+    "enabled": true,
+    "readonly": "readonly"
+  },
+  "bounding_box": {
+    "x": 905.1041870117188,
+    "y": 512.8958740234375,
+    "width": 269.55206298828125,
+    "height": 31.95831298828125
+  },
+  "element_at_center": {
+    "tagName": "INPUT",
+    "id": "land_title_date0",
+    "className": "form-control form-control-sm bd-clr datepicker date-picker",
+    "type": "text"
+  },
+  "datepicker_info": {
+    "elementTag": "INPUT",
+    "elementId": "land_title_date0",
+    "elementClass": "form-control form-control-sm bd-clr datepicker date-picker",
+    "readonly": true,
+    "disabled": false,
+    "hasDatepicker": true,
+    "dataAttributes": {},
+    "parentTag": "DIV",
+    "parentClass": "mb-3 col-4",
+    "siblings": [
+      {
+        "tag": "LABEL",
+        "class": "form-label",
+        "id": ""
+      },
+      {
+        "tag": "INPUT",
+        "class": "form-control form-control-sm bd-clr datepicker date-picker",
+        "id": "land_title_date0"
+      }
+    ]
+  },
+  "editability_check": {
+    "before": {
+      "readonly": true,
+      "disabled": false,
+      "value": ""
+    },
+    "after": {
+      "readonly": true,
+      "disabled": false,
+      "value": ""
+    }
+  },
+  "fill_test": {
+    "success": false,
+    "error": "Locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"#land_title_date0\")\n    - locator resolved to <input value=\"\" type=\"text\" readonly=\"readonly\" id=\"land_title_date0\" name=\"land_title_date[]\" placeholder=\"Select a date\" class=\"form-control form-control-sm bd-clr datepicker date-picker\"/>\n    - fill(\"15/03/2020\")\n  - attempting fill action\n    2 \u00d7 waiting for element to be visible, enabled and editable\n      - element is not editable\n    - retrying fill action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and editable\n      - element is not editable\n    - retrying fill action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and editable\n       - element is not editable\n     - retrying fill action\n       - waiting 500ms\n"
+  },
+  "type_test": {
+    "success": true,
+    "value": ""
+  },
+  "press_sequentially_test": {
+    "success": true,
+    "value": ""
+  },
+  "js_direct_injection": {
+    "value": "15/03/2020",
+    "success": true
+  },
+  "js_native_setter": {
+    "value": "15/03/2020",
+    "success": true
+  },
+  "next_with_js_date": {
+    "navigated": true
+  },
+  "calendar_check_after_click": {
+    "flatpickr": false,
+    "bootstrap": true,
+    "jquery": false,
+    "other": false,
+    "body_classes": "show"
+  },
+  "e2e_comparison_error": "Locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"textbox\", name=\"Select a date\").last\n    - locator resolved to <input value=\"\" type=\"text\" readonly=\"readonly\" id=\"land_title_date0\" name=\"land_title_date[]\" placeholder=\"Select a date\" class=\"form-control form-control-sm bd-clr datepicker date-picker\"/>\n    - fill(\"15/03/2020\")\n  - attempting fill action\n    2 \u00d7 waiting for element to be visible, enabled and editable\n      - element is not editable\n    - retrying fill action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and editable\n      - element is not editable\n    - retrying fill action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and editable\n       - element is not editable\n     - retrying fill action\n       - waiting 500ms\n",
+  "all_date_inputs": [
+    {
+      "index": 16,
+      "id": "noc_date",
+      "name": "noc_ref_no",
+      "type": "text",
+      "placeholder": "Select NOC Reference Number",
+      "readonly": false,
+      "disabled": false,
+      "value": "NOC-NEG-TEST-001",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr",
+      "parentClass": "mb-3 col-4"
+    },
+    {
+      "index": 17,
+      "id": "noc_date",
+      "name": "noc_date",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "mb-3 col-4"
+    },
+    {
+      "index": 18,
+      "id": "establishment_date",
+      "name": "establishment_date",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "01-01-1970",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "mb-3 col-4 "
+    },
+    {
+      "index": 19,
+      "id": "registration_date",
+      "name": "registration_date",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "01-01-1970",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "mb-3 col-4 "
+    },
+    {
+      "index": 33,
+      "id": "land_title_date0",
+      "name": "land_title_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "visible": true,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "mb-3 col-4"
+    },
+    {
+      "index": 37,
+      "id": "lease_deed_date_0",
+      "name": "lease_deed_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "mb-3 col-4"
+    },
+    {
+      "index": 39,
+      "id": "date_regis_lease_deed0",
+      "name": "registartion_lease_date[]",
+      "type": "text",
+      "placeholder": "Select a date",
+      "readonly": true,
+      "disabled": false,
+      "value": "",
+      "visible": false,
+      "className": "form-control form-control-sm bd-clr datepicker date-picker",
+      "parentClass": "col-lg-4 mb-3"
+    }
+  ]
+}

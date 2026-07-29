@@ -1,1 +1,1 @@
-[]
+[{"values":["CISCE Preliminary Affiliation Form Automation"],"name":"Project"},{"values":["Playwright + Pytest + POM"],"name":"Framework"},{"values":["3.14.5"],"name":"Python"},{"values":["Chromium"],"name":"Browser"},{"values":["Windows 11"],"name":"Platform"},{"values":["DEV"],"name":"Environment"},{"values":["https://dev-eaffiliation.cisce.org"],"name":"Base.URL"},{"values":["Playwright MCP"],"name":"Automation.Tool"},{"values":["Allure + HTML + Excel"],"name":"Reporting"}]
